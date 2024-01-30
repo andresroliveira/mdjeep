@@ -48,7 +48,7 @@ Syntax:
 
 ```bash
 make
-./mdjeep [options] mdfile.mdf
+./bin/mdjeep [options] mdfile.mdf
 ```
 
 The MDfile is supposed to contain the specifications for a certain number of predefined "fields". Every field
