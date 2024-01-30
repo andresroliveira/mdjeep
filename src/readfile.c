@@ -1001,7 +1001,7 @@ unsigned long readFormat(const char *c)
 // -> the returning value is the number of identified vertices (it is 0 if an error occurs)
 int numberOfVerticesInFile(FILE *input,char sep,unsigned long format,int *n0,size_t msize,char *memory)
 {
-   int i,id;
+   size_t i,id;
    int nmin,nmax;
    int nformat,nf;
    char tmp,*pointer;

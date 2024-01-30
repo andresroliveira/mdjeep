@@ -242,8 +242,8 @@ int readDistanceFile(FILE *input,char sep,int n,int n0,VERTEX *v,unsigned long f
 int readStartingPoint(FILE *input,int n,double **X);
 
 // print.c
-void printfile(int n,VERTEX *v,double **X,char *filename,int s);
-void printpdb(int n,VERTEX *v,double **X,char *filename,int s);
+void printfile(size_t n,VERTEX *v,double **X,char *filename,int s);
+void printpdb(size_t n, VERTEX *v, double **X, char *filename, int s);
 
 // utils.c
 omegaList initOmegaList(double l,double u);

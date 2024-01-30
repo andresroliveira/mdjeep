@@ -15,9 +15,9 @@
 
 // print solutions with the available vertex attributes in a text file
 // (s=0 : prints only one solution; solution number s>0 : prints multiple solutions in the same file)
-void printfile(int n,VERTEX *v,double **X,char *filename,int s)
+void printfile(size_t n,VERTEX *v,double **X,char *filename,int s)
 {
-   int i,k;
+   size_t i,k;
    int groupId;
    char *outfile;
    bool group;
@@ -74,9 +74,9 @@ void printfile(int n,VERTEX *v,double **X,char *filename,int s)
 
 // print solutions in PDB format
 // (s=0 : prints only one solution; solution number s>0 : prints multiple solutions in the same file)
-void printpdb(int n,VERTEX *v,double **X,char *filename,int s)
+void printpdb(size_t n,VERTEX *v,double **X,char *filename,int s)
 {
-   int i,k;
+   size_t i,k;
    char *outfile;
    FILE *output;
 
