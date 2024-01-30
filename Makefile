@@ -13,45 +13,33 @@
 #################################################################################################################
 
 
-# Nome do seu programa
 TARGET = mdjeep
 
-# Diretórios de origem, objeto e binário
 SRC_DIR = src
 OBJ_DIR = build
 BIN_DIR = bin
 
-# Lista de arquivos-fonte
 SOURCES = $(wildcard $(SRC_DIR)/*.c)
 
-# Gera a lista de arquivos-objeto com base nos arquivos-fonte
 OBJECTS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SOURCES))
 
-# Compilador e opções
 CC = gcc
 CFLAGS = -Wall -Wextra -O3 -ggdb -Iinc
 CLIBS = -lm
 
-# Nome do arquivo executável final
 EXECUTABLE = $(BIN_DIR)/$(TARGET)
 
-# Regra principal para a construção do executável
 all: $(EXECUTABLE)
 
-# Regra para a construção do executável
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) $^ -o $@ $(CLIBS)
 
-# Regra para a construção dos arquivos-objeto
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(CLIBS)
 
-# Criação dos diretórios se não existirem
 $(shell mkdir -p $(OBJ_DIR) $(BIN_DIR))
 
-# Regra para limpar arquivos temporários e o executável
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)
 
-# Aviso para o usuário
 .PHONY: all clean
