@@ -23,16 +23,16 @@ solver capable to solve instances from various applications. General "graph" not
 (vertex, distance edge).
 
 Discretizable Distance Geometry consists of a subclass of problems for which the search space can be discretized
-and reduced to a tree. Given a graph G=(V,E,d), with vertex set V, edge set E indicating whether the distance
+and reduced to a tree. Given a graph $G=(V,E,d)$, with vertex set $V$, edge set $E$ indicating whether the distance
 between two vertices is known or not, and a weight function d providing the numerical values for such distances,
 an instance of this problem falls in the discretizable subclass where there exist a vertex order on V such that:
 
 1. the first 3 vertices in the order form a clique with exact distances;
-2. for all other vertices with rank $i > 3$, there must exist three reference vertices $j1$, $j2$ and $j3$, such that:
+2. for all other vertices with rank $i > 3$, there must exist three reference vertices $j_1$, $j_2$ and $j_3$, such that:
 
-$$ j1 < i, j2 < i, j3 < i, (j1,i) \in E, (j2,i) \in E, (j3,i) \in E. $$
+$$ j_1 < i, j_2 < i, j_3 < i, (j_1,i) \in E, (j_2,i) \in E, (j_3,i) \in E. $$
 
-In this version, we suppose that only one of the three distances d(j1,i), d(j2,i) and d(j3,i) can be represented
+In this version, we suppose that only one of the three distances $d(j_1,i)$, $d(j_2,i)$ and $d(j_3,i)$ can be represented
 by an interval, while the others are supposed to be exact (ie, its lower and upper bounds are closer than the
 predefined error tolerance).
 
@@ -131,8 +131,9 @@ may be subject to change: we'll try our best to guarantee the compatibility for 
 least for near versions.
 
 Example of use for solving protein instances with low precision distances (proteinSet2) :
-
- mdjeep -1 instances/0.3/proteinSet2/proteins.mdf
+```sh
+$ mdjeep -1 instances/0.3/proteinSet2/proteins.mdf
+```
 
 If MDjeep takes too long to solve your instance, you can terminate it with the ^C signal and verify the current
 partial solution in the output file (it will be created before termination if one of the two options -p or -P
