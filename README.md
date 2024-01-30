@@ -2,7 +2,7 @@
 # MD-jeep, version 0.3.2
 
 The Branch & Prune algorithm for Discretizable Distance Geometry
-Copyright (C) 2022, A. Mucherino, D.S. Goncalves, C. 
+Copyright (C) 2022, A. Mucherino, D.S. Goncalves, C.
 Lavor, L. Liberti, J-H. Lin, N. Maculan
 GNU General Public License v.3
 
@@ -44,9 +44,11 @@ or as a refinement step in BP. For more information, please refer to our list of
 Since version 0.3.2, MDjeep accepts in input MDfiles (with mdf extension). These are text files containing some
 main specifications for loading the problem instances, and for running the solution methods:
 
-Syntax: 
+Syntax:
+
 ```bash
-$ ./mdjeep [options] mdfile.mdf
+make
+./mdjeep [options] mdfile.mdf
 ```
 
 The MDfile is supposed to contain the specifications for a certain number of predefined "fields". Every field
@@ -131,8 +133,9 @@ may be subject to change: we'll try our best to guarantee the compatibility for 
 least for near versions.
 
 Example of use for solving protein instances with low precision distances (proteinSet2) :
+
 ```sh
-$ mdjeep -1 instances/0.3/proteinSet2/proteins.mdf
+mdjeep -1 instances/0.3/proteinSet2/proteins.mdf
 ```
 
 If MDjeep takes too long to solve your instance, you can terminate it with the ^C signal and verify the current
